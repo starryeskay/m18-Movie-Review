@@ -3,11 +3,11 @@ from pydantic import BaseModel
 from typing import List
 import requests
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import json
 from pathlib import Path
 
-load_dotenv()
+#load_dotenv()
 
 app = FastAPI()
 
@@ -38,7 +38,7 @@ reviews = load_json(REVIEWS_FILE, [])
 movie_id_counter = max([m["id"] for m in movies], default=0) + 1
 review_id_counter = max([r["id"] for r in reviews], default=0) + 1
 
-SENTIMENT_API_URL = os.getenv("SENTIMENT_API_URL")
+SENTIMENT_API_URL = os.getenv("SENTIMENT_API_URL") or st.secrets["SENTIMENT_API_URL"]
 
 # =========================
 # 데이터 모델
