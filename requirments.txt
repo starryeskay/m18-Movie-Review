@@ -1,0 +1,9 @@
+dotenv
+os
+requests
+fastapi
+pydantic
+transformers
+typing
+json
+pathlib
