@@ -1,0 +1,114 @@
+[
+  {
+    "movie_id": 1,
+    "author": "stella",
+    "content": "best movie in the world!!!",
+    "id": 1,
+    "sentiment_label": "LABEL_1",
+    "sentiment_score": 0.5288838744163513
+  },
+  {
+    "movie_id": 1,
+    "author": "99",
+    "content": "최고의 영화!",
+    "id": 2,
+    "sentiment_label": "LABEL_1",
+    "sentiment_score": 0.5072614550590515
+  },
+  {
+    "movie_id": 1,
+    "author": "",
+    "content": "33",
+    "id": 3,
+    "sentiment_label": "neutral",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 1,
+    "author": "ㅁㅁㅁ",
+    "content": "최고의 영화!",
+    "id": 4,
+    "sentiment_label": "neutral",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 1,
+    "author": "테스트",
+    "content": "완전 별로 bad movie",
+    "id": 5,
+    "sentiment_label": "neutral",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 1,
+    "author": "테스트",
+    "content": "완전 별로 bad movie",
+    "id": 6,
+    "sentiment_label": "neutral",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "아아아",
+    "id": 7,
+    "sentiment_label": "neutral",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 8,
+    "sentiment_label": "오류가 발생했습니다.",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 9,
+    "sentiment_label": "오류가 발생했습니다.",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 10,
+    "sentiment_label": "오류가 발생했습니다.",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 11,
+    "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 12,
+    "sentiment_label": "오류가 발생하여 감성분석에 실패했습",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 13,
+    "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다.",
+    "sentiment_score": 0.0
+  },
+  {
+    "movie_id": 1,
+    "author": "테스트",
+    "content": "완전 별로 bad movie",
+    "id": 14,
+    "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다.",
+    "sentiment_score": 0.0
+  }
+]

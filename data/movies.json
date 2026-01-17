@@ -1,0 +1,18 @@
+[
+  {
+    "title": "타이타닉",
+    "release_date": "1997",
+    "director": "제임스 카메론",
+    "genre": "드라마, 로맨스",
+    "poster_url": "https://i.namu.wiki/i/E4aDpH72trFFOn4pEOgS5sGLhrLhyAD0Q1dPdetx3KLgKyDcG-nQj3UCje8qB0DwV7F_deC-Vn12kLvKJVXXJnhED5in0Stwq2fXU1GHuTvDRJpLMOE30GrgXX5O60APzhaIVJfmDsJ6DW-uf4Hk0Q.webp",
+    "id": 1
+  },
+  {
+    "title": "아바타",
+    "release_date": "2009",
+    "director": "제임스 카메론",
+    "genre": "SF, 판타지",
+    "poster_url": "https://i.namu.wiki/i/BQvWwyNkvQFxClnspNeshIEOWqDA99C6ofnpyaFF3R7JmsR0MVAMalDjuz_sPGYN68yAGbdBG85YPXIr16_lY9cE9479zNPyP1I7PTkxvaFdS3F7mCnNpzyTC9EMgjP7Tk_Z2GxNH1q7DeKMEGU15g.webp",
+    "id": 2
+  }
+]
