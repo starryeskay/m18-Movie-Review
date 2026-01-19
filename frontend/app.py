@@ -1,9 +1,9 @@
 import streamlit as st
 import requests
 import os
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-#load_dotenv()
+load_dotenv()
 
 API_BASE_URL = os.getenv("API_BASE_URL") or st.secrets["API_BASE_URL"]
 
@@ -85,7 +85,7 @@ def render_review_ui(movie, reviews, API_BASE_URL, mode):
                 st.markdown(f"""
                 **{r['author']}**  
                 {r['content']}  
-                감성분석 결과: `{r['sentiment_label']}` ({r['sentiment_score']})
+                AI 분석 결과: `{r['sentiment_label']}` (신뢰도: {r['sentiment_score']*100:.2f}%)
                 """)
                 st.divider()
 
@@ -134,7 +134,7 @@ for m in movies:
     rating_info = fetch_rating(m["id"], API_BASE_URL)
 
     if rating_info["rating"] is None:
-        ratings[m["id"]] = "- / 10"
+        ratings[m["id"]] = "-"
     else:
         ratings[m["id"]] = f"{rating_info['rating']} / 10"
 
@@ -165,6 +165,7 @@ if st.session_state["view"] == "detail":
         st.write(f"감독: {movie['director']}")
         st.write(f"장르: {movie['genre']}")
         st.write(f"개봉년도: {movie['release_date']}")
+        st.write(f"⭐ AI 평점: {ratings[movie['id']]}")
 
     with st.expander("✍️ 리뷰 쓰기", expanded=False):
         render_review_ui(movie, reviews, API_BASE_URL, "write")
@@ -203,7 +204,7 @@ else:
                     st.markdown(f"### {m['title']} ({m['release_date']})")
                     st.write(f"감독: {m['director']}")
                     st.write(f"장르: {m['genre']}")
-                    st.write(f"⭐ **평점: {ratings[m['id']]}**")
+                    st.write(f"⭐ **AI 평점: {ratings[m['id']]}**")
 
                     if st.button("상세보기", key=f"detail_home_{m['id']}"):
                         st.session_state["view"] = "detail"
@@ -224,7 +225,7 @@ else:
                     <span style="font-size:22px; font-weight:600;">
                         {m['id']}. {m['title']} ({m['release_date']})
                     </span>
-                    ⭐ <b>평점: {ratings[m['id']]}</b>
+                    ⭐ <b>AI 평점: {ratings[m['id']]}</b>
                     """,
                     unsafe_allow_html=True
                 )

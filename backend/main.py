@@ -1,25 +1,24 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 import requests
 import os
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 import json
 from pathlib import Path
 
-#load_dotenv()
+load_dotenv()
 
 app = FastAPI()
 
 # =========================
 # Step 1: 데이터 저장소
-# TODO (Step 2): SQLite로 교체
+# TODO 시간되면 SQLite로 교체
 # =========================
 DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 MOVIES_FILE = DATA_DIR / "movies.json"
 REVIEWS_FILE = DATA_DIR / "reviews.json"
-
 
 def load_json(path, default):
     if path.exists():
@@ -38,7 +37,7 @@ reviews = load_json(REVIEWS_FILE, [])
 movie_id_counter = max([m["id"] for m in movies], default=0) + 1
 review_id_counter = max([r["id"] for r in reviews], default=0) + 1
 
-SENTIMENT_API_URL = os.getenv("SENTIMENT_API_URL") or st.secrets["SENTIMENT_API_URL"]
+SENTIMENT_API_URL = os.getenv("SENTIMENT_API_URL")
 
 # =========================
 # 데이터 모델
@@ -60,8 +59,9 @@ class Review(BaseModel):
 
 class ReviewResponse(Review):
     id: int
-    sentiment_label: str
+    sentiment_label: Optional[str]
     sentiment_score: float
+    rating: Optional[int]
 
 # =========================
 # 영화 API
@@ -69,7 +69,7 @@ class ReviewResponse(Review):
 @app.post("/movies", response_model=MovieResponse)
 def add_movie(movie: Movie):
     global movie_id_counter
-    data = movie.dict()
+    data = movie.model_dump()
     data["id"] = movie_id_counter
     movie_id_counter += 1
     movies.append(data)
@@ -88,6 +88,8 @@ def get_movies():
 def create_review(review: Review):
     global review_id_counter
 
+    rating = None # 기본값: 평점 없음
+    
     # 감성 분석 API 호출
     try:
         sentiment_res = requests.post(
@@ -96,21 +98,30 @@ def create_review(review: Review):
             timeout=5
         ).json()
     
-        label = sentiment_res.get("label", "neutral")
-        score = sentiment_res.get("score", 0.0)
+        label = sentiment_res.get("label")
+        score = float(sentiment_res.get("score", 0.0))
+
+        # label → 10점 환산으로 rating 저장 (2배수로 단순 계산)
+        # 예: "4 stars" → 8점
+        if isinstance(label, str):
+            parts = label.split()
+            if len(parts) > 0 and parts[0].isdigit():
+                stars = int(parts[0])      # 1~5
+                rating = stars * 2
+
     except Exception:
-        label = "오류가 발생하여 감성분석에 실패했습니다."
+        label = None
         score = 0.0
 
-    data = review.dict()
+    data = review.model_dump()
     data["id"] = review_id_counter
     review_id_counter += 1
     data["sentiment_label"] = label
     data["sentiment_score"] = score
+    data["rating"] = rating
 
     reviews.append(data)
-    # TODO (Step 2): JSON 저장 → SQLite로 교체
-    save_json(REVIEWS_FILE, reviews)
+    save_json(REVIEWS_FILE, reviews)    # 나중에 SQLite로 교체해보기
     return data
 
 
@@ -121,7 +132,8 @@ def get_reviews():
 @app.get("/movies/{movie_id}/rating")
 def get_movie_rating(movie_id: int):
     movie_reviews = [
-        r for r in reviews if r["movie_id"] == movie_id
+        r for r in reviews
+        if r["movie_id"] == movie_id and isinstance(r.get("rating"), (int, float))
     ]
 
     if not movie_reviews:
@@ -130,17 +142,11 @@ def get_movie_rating(movie_id: int):
             "count": 0
         }
 
-    avg_score = sum(r["sentiment_score"] for r in movie_reviews) / len(movie_reviews)
-    rating_10 = round(avg_score * 10, 1)
+    avg_rating = round(
+        sum(r["rating"] for r in movie_reviews) / len(movie_reviews), 1
+    )
 
     return {
-        "rating": rating_10,
+        "rating": avg_rating,
         "count": len(movie_reviews)
     }
-
-
-# =========================
-# TODO (심화)
-# - 영화별 리뷰 조회
-# - 평균 감성 점수 계산
-# =========================

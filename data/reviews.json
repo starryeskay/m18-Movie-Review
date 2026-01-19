@@ -5,7 +5,8 @@
     "content": "best movie in the world!!!",
     "id": 1,
     "sentiment_label": "LABEL_1",
-    "sentiment_score": 0.5288838744163513
+    "sentiment_score": 0.5288838744163513,
+    "rating": null
   },
   {
     "movie_id": 1,
@@ -13,7 +14,8 @@
     "content": "최고의 영화!",
     "id": 2,
     "sentiment_label": "LABEL_1",
-    "sentiment_score": 0.5072614550590515
+    "sentiment_score": 0.5072614550590515,
+    "rating": null
   },
   {
     "movie_id": 1,
@@ -21,7 +23,8 @@
     "content": "33",
     "id": 3,
     "sentiment_label": "neutral",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 1,
@@ -29,7 +32,8 @@
     "content": "최고의 영화!",
     "id": 4,
     "sentiment_label": "neutral",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 1,
@@ -37,7 +41,8 @@
     "content": "완전 별로 bad movie",
     "id": 5,
     "sentiment_label": "neutral",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 1,
@@ -45,7 +50,8 @@
     "content": "완전 별로 bad movie",
     "id": 6,
     "sentiment_label": "neutral",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -53,7 +59,8 @@
     "content": "아아아",
     "id": 7,
     "sentiment_label": "neutral",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -61,7 +68,8 @@
     "content": "string",
     "id": 8,
     "sentiment_label": "오류가 발생했습니다.",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -69,7 +77,8 @@
     "content": "string",
     "id": 9,
     "sentiment_label": "오류가 발생했습니다.",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -77,7 +86,8 @@
     "content": "string",
     "id": 10,
     "sentiment_label": "오류가 발생했습니다.",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -85,7 +95,8 @@
     "content": "string",
     "id": 11,
     "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -93,7 +104,8 @@
     "content": "string",
     "id": 12,
     "sentiment_label": "오류가 발생하여 감성분석에 실패했습",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 0,
@@ -101,7 +113,8 @@
     "content": "string",
     "id": 13,
     "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다.",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
   },
   {
     "movie_id": 1,
@@ -109,6 +122,88 @@
     "content": "완전 별로 bad movie",
     "id": 14,
     "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다.",
-    "sentiment_score": 0.0
+    "sentiment_score": 0.0,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "dd",
+    "content": "ddd",
+    "id": 15,
+    "sentiment_label": "오류가 발생하여 감성분석에 실패했습니다.",
+    "sentiment_score": 0.0,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "ㅁㅁ",
+    "content": "One of the greatest films by a legendary filmmaker. This fantastic picture never gets old and too many amazing humans who performed so well in this one are no longer with us. Love everything about this one",
+    "id": 16,
+    "sentiment_label": "LABEL_0",
+    "sentiment_score": 0.5534879565238953,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "ㅁㅁ",
+    "content": "One of the greatest films by a legendary filmmaker. This fantastic picture never gets old and too many amazing humans who performed so well in this one are no longer with us. Love everything about this one",
+    "id": 17,
+    "sentiment_label": "5 stars",
+    "sentiment_score": 0.9814760684967041,
+    "rating": null
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "string",
+    "id": 18,
+    "sentiment_label": "4 stars",
+    "sentiment_score": 0.33681926131248474,
+    "rating": 8
+  },
+  {
+    "movie_id": 0,
+    "author": "string",
+    "content": "this movie is really terrible",
+    "id": 19,
+    "sentiment_label": "1 star",
+    "sentiment_score": 0.8197298049926758,
+    "rating": 2
+  },
+  {
+    "movie_id": 1,
+    "author": "string",
+    "content": "testing",
+    "id": 20,
+    "sentiment_label": "3 stars",
+    "sentiment_score": 0.297015517950058,
+    "rating": 6
+  },
+  {
+    "movie_id": 1,
+    "author": "",
+    "content": "One of the greatest films by a legendary filmmaker. This fantastic picture never gets old and too many amazing humans who performed so well in this one are no longer with us. Love everything about this one",
+    "id": 21,
+    "sentiment_label": "5 stars",
+    "sentiment_score": 0.9814760684967041,
+    "rating": 10
+  },
+  {
+    "movie_id": 1,
+    "author": "",
+    "content": "",
+    "id": 22,
+    "sentiment_label": "5 stars",
+    "sentiment_score": 0.29260772466659546,
+    "rating": 10
+  },
+  {
+    "movie_id": 1,
+    "author": "sk",
+    "content": "너무 좋았어요~~~!!!",
+    "id": 23,
+    "sentiment_label": "5 stars",
+    "sentiment_score": 0.3551388382911682,
+    "rating": 10
   }
 ]

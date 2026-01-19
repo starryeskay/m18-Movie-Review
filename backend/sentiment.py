@@ -6,19 +6,10 @@ app = FastAPI()
 
 # =========================
 # 서버 시작 시 모델 1회 로드
-# 다국어, 짧은 리뷰에 적합: cardiffnlp/twitter-xlm-roberta-base-sentiment
-# 한국어 감성 분석에 적합: beomi/KcELECTRA-base-v2022
+# 다국어 리뷰 감성 분석용 (5점 (1-5 stars): nlptown/bert-base-multilingual-uncased-sentiment
+# 한국어 감성 분석용 (이진분류 LABEL_0: 부정 / LABEL_1: 긍정): beomi/KcELECTRA-base-v2022
 # =========================
-MODEL_NAME = "cardiffnlp/twitter-xlm-roberta-base-sentiment"
-
-tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_NAME,
-    use_fast=False
-)
-
-model = AutoModelForSequenceClassification.from_pretrained(
-    MODEL_NAME
-)
+MODEL_NAME = "nlptown/bert-base-multilingual-uncased-sentiment"
 
 sentiment_model = pipeline(
     "sentiment-analysis",
