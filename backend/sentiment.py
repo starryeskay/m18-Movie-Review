@@ -6,10 +6,11 @@ app = FastAPI()
 
 # =========================
 # 서버 시작 시 모델 1회 로드
+# 경량 모델 (영어전용): distilbert-base-uncased-finetuned-sst-2-english
 # 다국어 리뷰 감성 분석용 (5점 (1-5 stars): nlptown/bert-base-multilingual-uncased-sentiment
 # 한국어 감성 분석용 (이진분류 LABEL_0: 부정 / LABEL_1: 긍정): beomi/KcELECTRA-base-v2022
 # =========================
-MODEL_NAME = "nlptown/bert-base-multilingual-uncased-sentiment"
+MODEL_NAME = "distilbert-base-uncased-finetuned-sst-2-english"
 
 sentiment_model = pipeline(
     "sentiment-analysis",
