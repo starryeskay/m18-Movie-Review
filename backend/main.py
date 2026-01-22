@@ -101,17 +101,28 @@ def create_review(review: Review):
         label = sentiment_res.get("label")
         score = float(sentiment_res.get("score", 0.0))
 
+        # nlptown 모델용 rating 계산 (5점 척도)
         # label → 10점 환산으로 rating 저장 (2배수로 단순 계산)
         # 예: "4 stars" → 8점
-        if isinstance(label, str):
-            parts = label.split()
-            if len(parts) > 0 and parts[0].isdigit():
-                stars = int(parts[0])      # 1~5
-                rating = stars * 2
+        # if isinstance(label, str):
+        #     parts = label.split()
+        #     if len(parts) > 0 and parts[0].isdigit():
+        #         stars = int(parts[0])      # 1~5
+        #         rating = stars * 2
+
+        # sentiment 결과 기반 rating 계산 (이진 분류 모델용)
+        # 신뢰도를 반영하여 1~5점 척도로 변환
+        if label == "POSITIVE":
+            rating = min(5, max(3, round(score * 5)))
+        elif label == "NEGATIVE":
+            rating = max(1, round((1 - score) * 3))
+        else:
+            rating = None
 
     except Exception:
         label = None
         score = 0.0
+        rating = None
 
     data = review.model_dump()
     data["id"] = review_id_counter

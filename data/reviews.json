@@ -205,5 +205,86 @@
     "sentiment_label": "5 stars",
     "sentiment_score": 0.3551388382911682,
     "rating": 10
+  },
+  {
+    "movie_id": 1,
+    "author": "tester",
+    "content": "One of the greatest films by a legendary filmmaker. This fantastic picture never gets old and too many amazing humans who performed so well in this one are no longer with us. Love everything about this one",
+    "id": 24,
+    "sentiment_label": "POSITIVE",
+    "sentiment_score": 0.9997989535331726,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "tester",
+    "content": "Superb!!",
+    "id": 25,
+    "sentiment_label": "POSITIVE",
+    "sentiment_score": 0.9994858503341675,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "tester",
+    "content": "Very bad. Worst movie in the world.",
+    "id": 26,
+    "sentiment_label": "NEGATIVE",
+    "sentiment_score": 0.9997424483299255,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "tester",
+    "content": "i don't know...",
+    "id": 27,
+    "sentiment_label": "NEGATIVE",
+    "sentiment_score": 0.9979580640792847,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "tester",
+    "content": "hmm...",
+    "id": 28,
+    "sentiment_label": "NEGATIVE",
+    "sentiment_score": 0.9301090836524963,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "tester",
+    "content": "I don't know if this was good or bad",
+    "id": 29,
+    "sentiment_label": "NEGATIVE",
+    "sentiment_score": 0.9990547299385071,
+    "rating": null
+  },
+  {
+    "movie_id": 1,
+    "author": "new",
+    "content": "i'll have to watch this",
+    "id": 30,
+    "sentiment_label": "POSITIVE",
+    "sentiment_score": 0.9989506006240845,
+    "rating": 5
+  },
+  {
+    "movie_id": 1,
+    "author": "new",
+    "content": "very bad movie",
+    "id": 31,
+    "sentiment_label": "NEGATIVE",
+    "sentiment_score": 0.8844199180603027,
+    "rating": 1
+  },
+  {
+    "movie_id": 1,
+    "author": "mj",
+    "content": "One of the greatest films by a legendary filmmaker. This fantastic picture never gets old and too many amazing humans who performed so well in this one are no longer with us. Love everything about this one",
+    "id": 32,
+    "sentiment_label": "POSITIVE",
+    "sentiment_score": 0.9997989535331726,
+    "rating": 5
   }
 ]
