@@ -73,22 +73,20 @@ data/
 - 리뷰 작성 시 실시간으로 감성 분석 결과 및 평점 반영
 - 배포 환경에 따라 환경변수(.env / secrets.toml)로 API 주소 분리 관리
 
-1) 메인화면
-<img width="921" height="799" alt="image" src="https://github.com/user-attachments/assets/7662d4e4-2f25-4b00-aa9a-a9269f7d93e5" />
+### 1) 메인화면
 - 등록된 영화 중 AI 평점 기준 상위 10개 영화를 자동으로 정렬하여 노출
 - 사용자는 한눈에 평점이 높은 영화를 확인하고 상세 페이지로 이동 가능
+<img width="921" height="799" alt="image" src="https://github.com/user-attachments/assets/7662d4e4-2f25-4b00-aa9a-a9269f7d93e5" />
 
-2) 영화 목록 화면
-<img width="936" height="808" alt="image" src="https://github.com/user-attachments/assets/8dc109c7-dafe-4b01-8265-9547c7247c64" />
+### 2) 영화 목록 화면
 - 현재 시스템에 등록된 전체 영화 목록을 조회
 - 각 영화별 AI 평점 요약과 함께 상세보기 진입 버튼 제공
+<img width="936" height="808" alt="image" src="https://github.com/user-attachments/assets/8dc109c7-dafe-4b01-8265-9547c7247c64" />
 
-3) 영화 상세 화면
-<img width="936" height="835" alt="image" src="https://github.com/user-attachments/assets/16fcfb58-de47-4c60-82f9-f79be2985a59" />
+### 3) 영화 상세 화면 + 리뷰 작성 및 분석 결과 화면
 - 선택한 영화의 포스터, 기본 정보(감독·장르·개봉년도) 및 AI 평균 평점 표시
 - 리뷰 작성 및 기존 리뷰 조회가 가능한 중심 화면
+- 사용자가 작성한 리뷰를 기반으로 AI 감성 분석 결과(POSITIVE/NEGATIVE)와 신뢰도를 즉시 확인 -> AI 평점 산출
+<img width="936" height="835" alt="image" src="https://github.com/user-attachments/assets/16fcfb58-de47-4c60-82f9-f79be2985a59" />
 
-4) 리뷰 작성 및 분석 결과 화면
 <img width="931" height="878" alt="image" src="https://github.com/user-attachments/assets/4df8b4c3-b7c3-46f1-988a-216a06a5912b" />
-- 사용자가 작성한 리뷰를 기반으로 AI 감성 분석 결과(POSITIVE/NEGATIVE)와 신뢰도를 즉시 확인
-- 감성 분석 결과는 서비스 정책에 따라 평점 산출에 반영
