@@ -15,7 +15,8 @@ data/
  └─ reviews.json   리뷰 DB
 ```
 
-# 2. 아키텍처 구조
+# 2. 아키텍처 구조 및 배포 환경
+### 1) 구조 설명
 ```
 [User]
 ↓
@@ -26,13 +27,38 @@ data/
 [Sentiment Model API]
 ```
 
+### 2) 배포 환경 구성
+
+Frontend: Streamlit Cloud
+
+Backend API: Render (FastAPI, CPU 환경)
+
+Sentiment Model API: Render (경량 모델 또는 mock 처리)
+
+### 3) 환경변수 기반 설정
+
+서비스 간 주소 및 민감 정보는 환경변수로 관리
+
+로컬과 배포 환경을 동일한 코드로 운영 가능
+```
+API_BASE_URL
+SENTIMENT_API_URL
+```
+
+### 4) 리소스 제약 대응 전략
+
+Render 무료 플랜(512MB) 메모리 한계로 인해
+대형 Transformer 모델은 사용하지 않음
+
+감성 분석 결과는 이진 분류 모델 + 서버 환산 로직으로 처리
+
 # 3. Backend API 설계 (`backend/main.py`)
 
 ### 1) 역할 정의
 - 영화 CRUD 관리
 - 리뷰 등록 및 조회
 - 외부 감성 분석 API 연동
-- 리뷰 기반 평점 계산 (이진 분류 결과를 신뢰도 반영해 1~5점으로 환산 후 *2)
+- 리뷰 기반 평점 계산 (이진 분류 결과를 신뢰도 반영해 1~5점으로 환산 (UI에서는 10점 만점으로 환산해서 표시)
 
 ### 2) 데이터 저장 전략
 - JSON 파일 기반
