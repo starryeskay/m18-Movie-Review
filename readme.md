@@ -1,16 +1,22 @@
 streamlit 주소: https://m18-movie-review.streamlit.app/
 
 # 1. 프로젝트 디렉토리 구조 설명
+
+```
 backend/
-    ㄴmain.py           메인 비즈니스 API
-    ㄴsentiment.py      감성분석 모델 API
+ ├─ main.py        메인 비즈니스 API
+ └─ sentiment.py   감성분석 모델 API
+
 frontend/
-    ㄴapp.py            Streamlit UI
+ └─ app.py         Streamlit UI
+
 data/
-    ㄴmovies.json       영화 DB
-    ㄴreviews.json      리뷰 DB
+ ├─ movies.json    영화 DB
+ └─ reviews.json   리뷰 DB
+```
 
 # 2. 아키텍처 구조
+```
 [User]
 ↓
 [Streamlit Frontend]
@@ -18,6 +24,7 @@ data/
 [Backend API (FastAPI)]
 ↓ (HTTP REST)
 [Sentiment Model API]
+```
 
 # 3. Backend API 설계 (`backend/main.py`)
 
