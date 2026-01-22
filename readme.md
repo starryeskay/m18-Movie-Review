@@ -46,14 +46,13 @@ data/
 # 4. 감성분석 모델 (`backend/sentiment.py`)
 사용모델: 
 - 기존: nlptown/bert-base-multilingual-uncased-sentiment
-- 현재: distilbert-base-uncased-finetuned-sst-2-english
+- 변경: distilbert-base-uncased-finetuned-sst-2-english
 
 ### 1) 모델 선정 이유:
 기존 모델
 - 다국어 지원
 - 1~5 stars 분류
--> Render OOM 이슈로 해당 모델 사용 중단
--> 경량 이진 분류 모델로 교체
+- Render OOM 이슈로 해당 모델 사용 중단 -> 경량 이진 분류 모델로 교체
 
 ### 2) Endpoint 요약
 | Method | Endpoint            | Input.    | Output         |
