@@ -1,3 +1,5 @@
+streamlit 주소: https://m18-movie-review.streamlit.app/
+
 # 1. 프로젝트 디렉토리 구조 설명
 backend/
     ㄴmain.py           메인 비즈니스 API
